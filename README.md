@@ -25,3 +25,10 @@ Curso de laravel | Martes y Jueves por la noche  código 42630
     https://getcomposer.org/  
     https://getcomposer.org/Composer-Setup.exe  
 
+## Recursos
+  - Manual oficial de Laravel:  https://laravel.com/
+  - Laracasts_  https://laracasts.com/
+  - Styde https://styde.net/
+  - Laravel News https://laravel-news.com/
+
+
