@@ -20,3 +20,8 @@ Curso de laravel | Martes y Jueves por la noche  código 42630
  - Cygwin https://www.cygwin.com/
  - Git Bash
 
+2. Composer
+    Composer es un administrador de dependencias en PHP.  
+    https://getcomposer.org/  
+    https://getcomposer.org/Composer-Setup.exe  
+
