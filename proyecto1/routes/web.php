@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::get( 'peticion', proceso );
+Route::get( '/hola', function(){
+    return 'Hola Mundo desde Laravel';
+} );
+
+Route::get('/inicio/{nombre}', function ($nombre){
+    return view('inicio', [ 'nombre' => $nombre  ]);
+});
+
+
