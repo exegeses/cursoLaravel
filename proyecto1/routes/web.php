@@ -24,4 +24,6 @@ Route::get('/inicio/{nombre}', function ($nombre){
     return view('inicio', [ 'nombre' => $nombre  ]);
 });
 
-
+#############################
+### motor de plantillas blade
+Route::view('/test', 'prueba');
