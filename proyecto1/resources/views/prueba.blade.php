@@ -1,7 +1,8 @@
+@extends('layouts.plantilla')
 
-    <main class="container">
-        <h1>Vista blade de inicio</h1>
+    @section('contenido')
+        <h1>Tema de la Página</h1>
 
+        {{ date('d/m/Y') }}
 
-
-    </main>
+    @endSection
