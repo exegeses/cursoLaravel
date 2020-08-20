@@ -27,3 +27,7 @@ Route::get('/inicio/{nombre}', function ($nombre){
 #############################
 ### motor de plantillas blade
 Route::view('/test', 'prueba');
+Route::view('/form', 'formulario');
+Route::post('/procesarDatos', function (){
+    return view('procesarDatos');
+});
