@@ -29,5 +29,10 @@ Route::get('/inicio/{nombre}', function ($nombre){
 Route::view('/test', 'prueba');
 Route::view('/form', 'formulario');
 Route::post('/procesarDatos', function (){
-    return view('procesarDatos');
+    $nombre = $_POST['nombre']; // captura de dato desde form
+    /*
+        falta pasar dato a la view
+        y haremos usando un array asuciativo
+    */
+    return view('procesarDatos', [ 'nombre' => $nombre ]);
 });
