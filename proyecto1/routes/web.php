@@ -30,9 +30,22 @@ Route::view('/test', 'prueba');
 Route::view('/form', 'formulario');
 Route::post('/procesarDatos', function (){
     $nombre = $_POST['nombre']; // captura de dato desde form
+    $anio = $_POST['anio'];
     /*
         falta pasar dato a la view
-        y haremos usando un array asuciativo
+        y haremos usando un array asociativo
     */
-    return view('procesarDatos', [ 'nombre' => $nombre ]);
+    return view('procesarDatos',
+                [
+                    'nombre' => $nombre,
+                    'anio' => $anio
+                ]
+            );
+});
+
+#################
+## BASE DE DATOS
+Route::get('/BBDD', function (){
+    $regiones = DB::select('SELECT regNombre FROM regiones');
+    dd($regiones);
 });

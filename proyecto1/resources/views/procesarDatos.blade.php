@@ -6,7 +6,13 @@
 
         <div class="bg-light border col-8 mx-auto p-4">
 
-                Bienvenido {{ $nombre }}
+                Bienvenido {{ $nombre }} |
+
+                @if( $anio < 2002 )
+                    eres mayor
+                @else
+                    eres menor
+                @endif
 
         </div>
 
