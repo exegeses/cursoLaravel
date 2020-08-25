@@ -54,3 +54,19 @@ Route::get('/regiones', function (){
                         [ 'regiones'=> $regiones ]
                 );
 });
+
+#listado de destinos
+Route::get('/destinos', function (){
+    $destinos = DB::select(
+                            'SELECT
+                                    destID, destNombre,
+                                    d.regID, regNombre,
+                                    destPrecio,
+                                    destAsientos, destDisponibles
+                                FROM destinos d, regiones r
+                                WHERE d.regID = r.regID'
+    );
+    return view('adminDestinos',
+                    [ 'destinos' => $destinos ]
+                );
+});
