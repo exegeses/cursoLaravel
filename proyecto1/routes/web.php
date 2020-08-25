@@ -45,7 +45,10 @@ Route::post('/procesarDatos', function (){
 
 #################
 ## BASE DE DATOS
-Route::get('/BBDD', function (){
-    $regiones = DB::select('SELECT regNombre FROM regiones');
+Route::get('/regiones', function (){
+    $regiones = DB::select(
+                            'SELECT regID, regNombre
+                                FROM regiones'
+                          );
     dd($regiones);
 });
