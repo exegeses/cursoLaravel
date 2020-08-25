@@ -50,5 +50,7 @@ Route::get('/regiones', function (){
                             'SELECT regID, regNombre
                                 FROM regiones'
                           );
-    dd($regiones);
+    return view('adminRegiones',
+                        [ 'regiones'=> $regiones ]
+                );
 });
