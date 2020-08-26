@@ -78,3 +78,14 @@ Route::get('/destinos', function (){
  * delete()
  */
 Route::view('/agregarRegion', 'agregarRegion');
+
+Route::post('/agregarRegion', function (){
+    $regNombre = $_POST['regNombre'];
+    DB::insert(
+                'INSERT INTO regiones
+                        ( regNombre )
+                    VALUES
+                        ( ? )', [$regNombre]
+    );
+
+});
