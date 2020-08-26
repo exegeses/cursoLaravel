@@ -19,13 +19,13 @@
             </tr>
             </thead>
             <tbody>
-
+    @foreach( $destinos as $destino )
             <tr>
-                <td>destino</td>
-                <td>region</td>
-                <td>precio</td>
-                <td>asi</td>
-                <td>disp</td>
+                <td>{{ $destino->destNombre }}</td>
+                <td>{{ $destino->regNombre }}</td>
+                <td>{{ $destino->destPrecio }}</td>
+                <td>{{ $destino->destAsientos }}</td>
+                <td>{{ $destino->destDisponibles }}</td>
                 <td>
                     <a href="" class="btn btn-outline-secondary">
                         Modificar
@@ -37,7 +37,7 @@
                     </a>
                 </td>
             </tr>
-
+        @endforeach
             </tbody>
         </table>
     @endsection

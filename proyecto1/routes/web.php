@@ -44,7 +44,7 @@ Route::post('/procesarDatos', function (){
 });
 
 #################
-## BASE DE DATOS
+## BASE DE DATOS usando RawSQL
 Route::get('/regiones', function (){
     $regiones = DB::select(
                             'SELECT regID, regNombre
@@ -70,3 +70,11 @@ Route::get('/destinos', function (){
                     [ 'destinos' => $destinos ]
                 );
 });
+# Raw SQL
+####
+/* select()
+ * insert()
+ * update()
+ * delete()
+ */
+Route::view('/agregarRegion', 'agregarRegion');
