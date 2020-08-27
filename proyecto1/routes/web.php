@@ -65,7 +65,7 @@ Route::get('/destinos', function (){
                                     destAsientos, destDisponibles
                                 FROM destinos d, regiones r
                                 WHERE d.regID = r.regID'
-    );
+                        );
     return view('adminDestinos',
                     [ 'destinos' => $destinos ]
                 );
@@ -89,4 +89,26 @@ Route::post('/agregarRegion', function (){
     );
 
     return redirect('/regiones');
+});
+
+Route::get('/modificarRegion/{regID}', function ($regID){
+    //obtenemos datos de la region
+    $region = DB::select(
+                            'SELECT regNombre, regID
+                                FROM regiones
+                                WHERE regID = :regID
+                                ',  [ 'regID' => $regID ]
+                            );
+
+    //retornamos la vista pasando datos de la región
+    return view('modificarRegion', [ 'region'=>$region ] );
+});
+
+Route::post('/modificarRegion', function(){
+    //capturar datos enviados por el form
+
+    // modificar
+
+    //redirigir a adminRegiones + mensaje de ok
+
 });
