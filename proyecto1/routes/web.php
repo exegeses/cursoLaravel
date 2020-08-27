@@ -88,4 +88,5 @@ Route::post('/agregarRegion', function (){
                         ( ? )', [$regNombre]
     );
 
+    return redirect('/regiones');
 });
