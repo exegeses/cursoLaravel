@@ -24,6 +24,12 @@ Route::get('/inicio/{nombre}', function ($nombre){
     return view('inicio', [ 'nombre' => $nombre  ]);
 });
 
+Route::get('/mostrar/{x}/{y}', function($region, $subregion){
+    $mensaje = 'Region: '.$region.'<br>';
+    $mensaje .= 'Subregión: '.$subregion;
+    return $mensaje;
+});
+
 #############################
 ### motor de plantillas blade
 Route::view('/test', 'prueba');
