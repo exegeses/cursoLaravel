@@ -13,6 +13,9 @@
             Región: <br>
             <select name="regID" class="form-control" required>
                 <option value="">Seleccione una Región</option>
+        @foreach( $regiones as $region )
+                <option value="{{ $region->regID }}">{{  $region->regNombre }}</option>
+        @endforeach
             </select>
             <br>
             Precio: <br>

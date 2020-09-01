@@ -12,7 +12,7 @@
                 <th>Asientos</th>
                 <th>Disponibles</th>
                 <th colspan="2">
-                    <a href="" class="btn btn-dark">
+                    <a href="/agregarDestino" class="btn btn-dark">
                         Agregar
                     </a>
                 </th>
