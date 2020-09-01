@@ -5,8 +5,8 @@
 
         <div class="bg-light border border-secondary rounded p-4">
 
-        <form action="" method="">
-
+        <form action="/agregarDestino" method="post">
+        @csrf
             Nombre: <br>
             <input type="text" name="destNombre" class="form-control" required>
             <br>
