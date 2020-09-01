@@ -62,7 +62,7 @@ Route::get('/regiones', function (){
 });
 
 #listado de destinos
-Route::get('/destinos', function (){
+Route::get('/destinos-OLD', function (){
     $destinos = DB::select(
                             'SELECT
                                     destID, destNombre,
@@ -125,3 +125,18 @@ Route::post('/modificarRegion', function(){
     return redirect('/regiones')
             ->with('mensaje', 'Región: '.$regNombre.' modificada correctamente');
 });
+#############################
+#### Fluent Query Builder
+Route::get( '/destinos', function(){
+    //$destinos = DB::table('destinos')->get(); // cómo fetchAll()
+    //$destinos = DB::table('destinos')
+      //                  ->where('destID', 8)
+      //                  ->first();  //  cómo fetch()
+    $destinos = DB::table('destinos as d')
+                    ->join('regiones as r', 'd.regID', '=', 'r.regID')
+                    ->get();
+
+    return view('adminDestinos',
+                    [ 'destinos' => $destinos ]
+                );
+} );
