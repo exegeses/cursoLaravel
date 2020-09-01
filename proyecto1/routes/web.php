@@ -171,7 +171,9 @@ Route::post('/agregarDestino', function (){
     );
     //reporte
     return redirect('/destinos')
-            ->with([
-                'mensaje'=>'Destino: '.$destNombre.' agregado correctamente'
-            ]);
+            ->with(
+                [
+                    'mensaje'=>'Destino: '.$destNombre.' agregado correctamente'
+                ]
+            );
 });
