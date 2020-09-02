@@ -28,7 +28,7 @@
             <input type="number" name="destDisponibles" class="form-control" required>
             <br>
             <button class="btn btn-dark">Agregar</button>
-            <a href="/adminDestinos" class="btn btn-outline-secondary ml-3">
+            <a href="/destinos" class="btn btn-outline-secondary ml-3">
                  Volver a panel
             </a>
         </form>

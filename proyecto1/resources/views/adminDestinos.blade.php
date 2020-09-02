@@ -33,7 +33,7 @@
                 <td>{{ $destino->destAsientos }}</td>
                 <td>{{ $destino->destDisponibles }}</td>
                 <td>
-                    <a href="" class="btn btn-outline-secondary">
+                    <a href="/modificarDestino/{{ $destino->destID }}" class="btn btn-outline-secondary">
                         Modificar
                     </a>
                 </td>

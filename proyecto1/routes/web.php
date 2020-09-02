@@ -177,3 +177,52 @@ Route::post('/agregarDestino', function (){
                 ]
             );
 });
+
+Route::get('/modificarDestino/{destID}', function ($destID){
+    //obtenemos datos del destino
+    $destino = DB::table('destinos as d')
+                ->join('regiones as r', 'd.regID', '=', 'r.regID')
+                ->where('destID',$destID)
+                ->first();
+
+    //obtenemos listado de regiones
+    $regiones = DB::table('regiones')->get();
+
+    //retornamos form + pasamos datos del destino + listado de destinos
+    return view('formModificarDestino',
+                [
+                    'destino' => $destino,
+                    'regiones' => $regiones
+                ]
+            );
+});
+
+Route::post('/modificarDestino', function(){
+    //capturamos datos
+    $destNombre = $_POST['destNombre'];
+    $regID = $_POST['regID'];
+    $destPrecio = $_POST['destPrecio'];
+    $destAsientos = $_POST['destAsientos'];
+    $destDisponibles = $_POST['destDisponibles'];
+    $destID = $_POST['destID'];
+
+    //modificar
+    DB::table('destinos')
+            ->where('destID', $destID)
+            ->update(
+                [
+                    'destNombre' => $destNombre,
+                    'destPrecio' => $destPrecio,
+                    'regID' => $regID,
+                    'destAsientos' => $destAsientos,
+                    'destDisponibles' => $destDisponibles
+                ]
+            );
+    //retornar + informe ok
+    return redirect('/destinos')
+        ->with(
+            [
+                'mensaje'=>'Destino: '.$destNombre.' modificado correctamente'
+            ]
+        );
+});
