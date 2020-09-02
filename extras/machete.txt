@@ -1,0 +1,36 @@
+//Raw SQL
+	DB::select('sqlCOMPLETO')
+	DB::insert('sqlCOMPLETO')
+	DB::update('sqlCOMPLETO')
+	DB::delete('sqlCOMPLETO')
+
+// Fluent Query Builder
+
+	DB::table('nTable')->get();
+	DB::table('nTable')->select('campoa, campoB')->get();
+	DB::table('nTable')
+				->select('campoa, campoB')
+				->where('campo', valor)
+				->get();
+
+	DB::table('nTable')->insert(
+								[
+									'campo' => valor,
+									'campo2' => valor2,
+								]
+							)
+
+	DB::table('nTable')
+				->where('campo', 'valor')
+				->update(
+							[
+									'campo' => valor,
+									'campo2' => valor2,
+							]
+					)
+
+	DB::table('nTable')
+				->where('campo', 'valor')
+				->delete()
+
+
