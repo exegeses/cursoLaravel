@@ -50,3 +50,31 @@ Curso de laravel | Martes y Jueves por la noche  código 42630
 > para iniciar al server es el comando  
     `php artisan serve `
 >
+
+## Actualización desde un proyecto en repositorio
+
+> Cuando en un equipo de trabajo varios descargar un proyecto iniciado, la instalación es diferente.
+
+  -- Primero debemos descargar el proyecto
+  
+> Para descargar el proyecto podemos clonarlo usando git, pulearlo usando git o 
+> simplemente descargando el .zip    
+
+> Una vez que lo descargaste, aún no funciona, le faltan dependencias.
+> ¿cómo las dedscargamos?
+
+> Primero nos metemos en el directorio del proyecto y luego usamos el comando: 
+
+    composer update    
+ 
+> Este comando va a hacer que descargue todas las dependencias.   
+> ¿ya está todo listo?  NO, aun falta crear el archivo de configuración  
+
+> No tenemos el archivo .env, hay que crearlo. 
+> Es tan simple como hacer una copia del archivo .env.exampl y renombrarlo .env    
+
+> ¿ya está todo listo?  NO, aun falta generar la APP_KEY. Esto se logra con el comando:    
+
+
+    php artisan key:generate 
+
