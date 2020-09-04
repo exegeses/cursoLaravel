@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+#############################
+// ruta de prueba
+Route::get('/prueba', function(){
+    $marcas = \App\Marca::all();
+    dd($marcas);
+});
+#####################################
+######  CRUD DE MARCAS
+Route::get('/marcas', 'MarcaController@index');
+
