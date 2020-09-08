@@ -23,5 +23,14 @@ Route::get('/prueba', function(){
 });
 #####################################
 ######  CRUD DE MARCAS
-Route::get('/marcas', 'MarcaController@index');
+//Route::get('/marcas', 'MarcaController@index');
 
+Route::get('/adminMarcas', 'MarcaController@index');
+
+#####################################
+######  CRUD DE CATEGORIAS
+Route::view('/adminCategorias', 'adminCategorias');
+
+#####################################
+######  CRUD DE PRODUCTOS
+Route::view('/adminProductos', 'adminProductos');
