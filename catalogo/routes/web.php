@@ -29,7 +29,9 @@ Route::get('/adminMarcas', 'MarcaController@index');
 
 #####################################
 ######  CRUD DE CATEGORIAS
-Route::view('/adminCategorias', 'adminCategorias');
+Route::get('/adminCategorias', 'CategoriaController@index');
+Route::get('/agregarCategoria', 'CategoriaController@create');
+Route::post('/agregarCategoria', 'CategoriaController@store');
 
 #####################################
 ######  CRUD DE PRODUCTOS
