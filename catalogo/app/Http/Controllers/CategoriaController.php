@@ -43,6 +43,7 @@ class CategoriaController extends Controller
                                         'catNombre'=>'required|min:2|max:50'
                                     ]
                                 );
+
         //guardamos
         $Categoria = new Categoria;
         $Categoria->catNombre = $catNombre;
