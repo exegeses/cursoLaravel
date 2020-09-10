@@ -32,6 +32,8 @@ Route::get('/adminMarcas', 'MarcaController@index');
 Route::get('/adminCategorias', 'CategoriaController@index');
 Route::get('/agregarCategoria', 'CategoriaController@create');
 Route::post('/agregarCategoria', 'CategoriaController@store');
+Route::get('/modificarCategoria/{id}', 'CategoriaController@edit');
+Route::patch('/modificarCategoria', 'CategoriaController@update');
 
 #####################################
 ######  CRUD DE PRODUCTOS

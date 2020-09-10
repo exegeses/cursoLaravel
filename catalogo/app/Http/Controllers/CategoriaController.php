@@ -72,7 +72,14 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        //
+        //obtenemos datos de la categoría
+        $Categoria = Categoria::find($id);
+        //retornamos la vista del form con esos datos
+        return view('modificarCategoria',
+                        [
+                            'categoria'=>$Categoria
+                        ]
+                    );
     }
 
     /**
