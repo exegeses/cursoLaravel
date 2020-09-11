@@ -28,6 +28,16 @@ class CategoriaController extends Controller
         return view('agregarCategoria');
     }
 
+    public function validar(Request $request)
+    {
+        $request->validate(
+            [
+                'catNombre'=>'required|min:2|max:50'
+            ]
+        );
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -38,11 +48,7 @@ class CategoriaController extends Controller
     {
         $catNombre = $request->input('catNombre');
         //validación
-            $request->validate(
-                                    [
-                                        'catNombre'=>'required|min:2|max:50'
-                                    ]
-                                );
+        $this->validar($request);
 
         //guardamos
         $Categoria = new Categoria;
@@ -89,9 +95,21 @@ class CategoriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        //capturamos datos enviados por el form
+        $catNombre = $request->input('catNombre');
+        //validación
+        $this->validar($request);
+
+        //obtenemos datos de la categoría
+        $Categoria = Categoria::find( $request->input('idCategoria') );
+        //modificamos
+        $Categoria->catNombre = $catNombre;
+        $Categoria->save();
+        //retornamos vista con mensaje de confirmación
+        return redirect('adminCategorias')
+                    ->with('mensaje', 'Categoría: '.$catNombre.' modificada correctamente.');
     }
 
     /**
