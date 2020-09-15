@@ -37,4 +37,4 @@ Route::patch('/modificarCategoria', 'CategoriaController@update');
 
 #####################################
 ######  CRUD DE PRODUCTOS
-Route::view('/adminProductos', 'adminProductos');
+Route::get('/adminProductos', 'ProductoController@index');
