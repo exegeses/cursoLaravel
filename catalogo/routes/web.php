@@ -39,3 +39,4 @@ Route::patch('/modificarCategoria', 'CategoriaController@update');
 ######  CRUD DE PRODUCTOS
 Route::get('/adminProductos', 'ProductoController@index');
 Route::get('/agregarProducto', 'ProductoController@create');
+Route::post('/agregarProducto', 'ProductoController@store');

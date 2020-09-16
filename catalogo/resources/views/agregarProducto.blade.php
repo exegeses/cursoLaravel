@@ -39,7 +39,7 @@
                 <textarea name="prdPresentacion" class="form-control"></textarea>
                 <br>
                 Stock: <br>
-                <input type="number" name="prdStock" class="form-control" min="0">
+                <input type="number" name="prdStock" class="form-control">
                 <br>
                 Imagen: <br>
                 <input type="file" name="prdImagen" class="form-control">

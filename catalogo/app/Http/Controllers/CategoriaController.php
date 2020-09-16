@@ -33,6 +33,11 @@ class CategoriaController extends Controller
         $request->validate(
             [
                 'catNombre'=>'required|min:2|max:50'
+            ],
+            [
+                'catNombre.required'=>'El campo Nombre es obligatorio',
+                'catNombre.min'=>'El campo Nombre debe tener al menos 2 caractéres',
+                'catNombre.max'=>'El campo Nombre debe tener 50 caractéres como máximo'
             ]
         );
     }
