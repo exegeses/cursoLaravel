@@ -13,19 +13,19 @@
 </head>
 <body>
 
-    <header class="mb-3 shadow-sm">
+    <header class="mb-3 shadow bg-dark">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="container navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#">Proyecto laravel</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#">Inicio</a>
-                    <a class="nav-item nav-link" href="/adminMarcas">Marcas</a>
-                    <a class="nav-item nav-link" href="/adminCategorias">Categorias</a>
-                    <a class="nav-item nav-link" href="/adminProductos">Productos</a>
+                    <a class="nav-item nav-link mx-2" href="#">Inicio</a>
+                    <a class="nav-item nav-link mx-2" href="/adminMarcas">Marcas</a>
+                    <a class="nav-item nav-link mx-2" href="/adminCategorias">Categorias</a>
+                    <a class="nav-item nav-link mx-2" href="/adminProductos">Productos</a>
                 </div>
             </div>
         </nav>

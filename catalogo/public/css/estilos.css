@@ -1,10 +1,26 @@
 
     h1{
-        border-left: 10px solid #444;
+        border-left: 10px solid #6D757D;
         padding-left: 15px;
         margin-bottom: 20px;
     }
 
     main{
         margin-bottom: 120px;
+    }
+
+    .pagination > li.page-item.active .page-link{
+        background-color: #314549;
+        border-color: #343a40;
+    }
+    .pagination > li > a {
+        color: #1e282d;
+    }
+    .pagination > li > a:focus,
+    .pagination > li > a:hover,
+    .pagination > li > span:focus,
+    .pagination > li > span:hover {
+        z-index: 3;
+        background-color: #DEE2E6;
+        border-color: #ddd;
     }
