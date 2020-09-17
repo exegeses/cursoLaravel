@@ -166,7 +166,7 @@ class ProductoController extends Controller
      */
     public function destroy(Request $request)
     {
-        $Producto = Producto::find($request->input('idProducto'));
+        $Producto = Producto::find( $request->input('idProducto') );
         $prdNombre = $Producto->prdNombre;
         //$Producto->delete();
         return redirect('/adminProductos')

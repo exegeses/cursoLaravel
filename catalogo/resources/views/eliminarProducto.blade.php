@@ -30,6 +30,13 @@
         </form>
 
             <script>
+                /*
+                Swal.fire(
+                    'Título de la ventana',
+                    'descripción de la ventana, blah, blah',
+                    'warning'
+                )
+                */
                 Swal.fire({
                     title: '¿Desea eliminar el producto?',
                     text: "Esta acción no se puede deshacer.",
