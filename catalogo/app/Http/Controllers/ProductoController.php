@@ -151,14 +151,25 @@ class ProductoController extends Controller
         //
     }
 
+    public function confirmarBaja($id)
+    {
+        $Producto = Producto::with('relCategoria','relMarca')->find($id);
+
+        return view('eliminarProducto', ['producto'=>$Producto]);
+    }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy(Request $request)
     {
-        //
+        $Producto = Producto::find($request->input('idProducto'));
+        $prdNombre = $Producto->prdNombre;
+        //$Producto->delete();
+        return redirect('/adminProductos')
+                ->with('mensaje', 'Producto: '.$prdNombre.' eliminado correctamente');
     }
 }
