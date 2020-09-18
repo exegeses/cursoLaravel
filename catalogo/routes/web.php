@@ -40,6 +40,11 @@ Route::patch('/modificarCategoria', 'CategoriaController@update');
 Route::get('/adminProductos', 'ProductoController@index');
 Route::get('/agregarProducto', 'ProductoController@create');
 Route::post('/agregarProducto', 'ProductoController@store');
+Route::get('/modificarProducto/{id}', 'ProductoController@edit');
 
 Route::get('/eliminarProducto/{id}', 'ProductoController@confirmarBaja');
 Route::delete('/eliminarProducto', 'ProductoController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

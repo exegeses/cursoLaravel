@@ -146,9 +146,12 @@ class ProductoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
-        //
+        $marcas = Marca::all();
+        $categorias = Categoria::all();
+        $Producto = Producto::find($id);
+        //return view
     }
 
     /**
@@ -178,8 +181,10 @@ class ProductoController extends Controller
      */
     public function destroy(Request $request)
     {
+        //obtenemos datos de un producto
         $Producto = Producto::find( $request->input('idProducto') );
         $prdNombre = $Producto->prdNombre;
+        //aliminamos
         //$Producto->delete();
         return redirect('/adminProductos')
                 ->with('mensaje', 'Producto: '.$prdNombre.' eliminado correctamente');
